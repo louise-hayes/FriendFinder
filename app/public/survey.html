@@ -1,0 +1,236 @@
+<!-- take in form <input type="
+on click of submit api post to friend"> -->
+
+<!-- //ajax call to /api/friend post call with correct body object// -->
+<!-- create a button that sends an object -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Friends Finder</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="../routing/htmlRoutes.js"></script>
+
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="jumbotron">
+            <h1>Questionnaire</h1>
+            <h3>Enter your Info!</h3>
+            <hr>
+            <div class="row">
+
+                <div class="col-lg-12">
+
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">
+                                <strong>Add YourSelf</strong>
+                            </h3>
+                        </div>
+                        <div class="panel-body">
+                            <form method="POST" role="form">
+
+                                <div class="form-group">
+                                    <label for="name">Name</label>
+                                    <input type="text" class="form-control" id="name">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="photo">Photo Link</label>
+                                    <input type="text" class="form-control" id="photo">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="sel1">
+                                        <h3>Question 1</h3>
+                                    </label>
+                                    <p>How likely are you offer an old person help crossing the road</p>
+                                    <select class="form-control" id="sel1">
+                                        <option value="1">1 (Never)</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5 (Always)</option>
+                                    </select>
+                                    <label for="sel2">
+                                        <h3>Question 2</h3>
+                                    </label>
+                                    <p>How often do you play sports?</p>
+                                    <select class="form-control" id="sel2">
+                                        <option value="1">1 (Never)</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5 (Always)</option>
+                                    </select>
+                                    <label for="sel3">
+                                        <h3>Question 3</h3>
+                                    </label>
+                                    <p>How regularly do you travel for fun?</p>
+                                    <select class="form-control" id="sel3">
+                                        <option value="1">1 (Seldom)</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5 (Alot)</option>
+                                    </select>
+                                    <label for="sel4">
+                                        <h3>Question 4</h3>
+                                    </label>
+                                    <p>Are you ever late?</p>
+                                    <select class="form-control" id="sel4">
+                                        <option value="1">1 (Never)</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5 (Always)</option>
+                                    </select>
+                                    <label for="sel5">
+                                        <h3>Question 5</h3>
+                                    </label>
+                                    <p>How much do you like animals?</p>
+                                    <select class="form-control" id="sel5">
+                                        <option value="1">1 (Don't like)</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5 (Love!)</option>
+                                    </select>
+                                    <label for="sel6">
+                                        <h3>Question 6</h3>
+                                    </label>
+                                    <p>You remember your friends and famillies birthdays?</p>
+                                    <select class="form-control" id="sel6">
+                                        <option value="1">1 (Never)</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5 (Always)</option>
+                                    </select>
+                                    <label for="sel7">
+                                        <h3>Question 7</h3>
+                                    </label>
+                                    <p>Do you operate better when under pressure</p>
+                                    <select class="form-control" id="sel7">
+                                        <option value="1">1 (Strongly Disagree)</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5 (Strongly Agree)</option>
+                                    </select>
+                                    <label for="sel8">
+                                        <h3>Question 8</h3>
+                                    </label>
+                                    <p>You budget according to your needs</p>
+                                    <select class="form-control" id="sel8">
+                                        <option value="1">1 (Never)</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5 (Always)</option>
+                                    </select>
+                                    <label for="sel9">
+                                        <h3>Question 9</h3>
+                                    </label>
+                                    <p>You prefer a book to a movie</p>
+                                    <select class="form-control" id="sel9">
+                                        <option> value="1"1 (Never)</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5 (Always)</option>
+                                    </select>
+                                    <label for="sel10">
+                                        <h3>Question 10</h3>
+                                    </label>
+                                    <p>You would choose Apple products over Andriod</p>
+                                    <select class="form-control" id="sel10">
+                                        <option value="1">1 (Never)</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5 (Always)</option>
+                                    </select>
+                                </div>
+
+
+
+                            </form>
+                            <button type="button" class="btn btn-danger btn-lg" id="submit-btn">
+                                <span class="glyphicon glyphicon-plus"></span> Submit your self!</button>
+                        </div>
+
+                    </div>
+
+                    <script type="text/javascript">
+                        $("#submit-btn").on("click", function (event) {
+                            event.preventDefault();
+                            //   $("#add-btn").show();
+
+                            var newFriend =
+                                //     name: $("#name").val().trim(),
+                                //     photo: $("#photo").val().trim(),
+                                //     scores: $("#scores").val().trim()
+                                {
+                                    "name": $("#name").val().trim(),
+                                    // "photo": "https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
+                                    "photo": $("#photo").val().trim(),
+                                    "scores": [
+                                        parseInt($("#sel1").val()),
+                                        parseInt($("#sel2").val()),
+                                        $("#sel3").val(),
+                                        $("#sel4").val(),
+                                        $("#sel5").val(),
+                                        $("#sel6").val(),
+                                        $("#sel7").val(),
+                                        $("#sel8").val(),
+                                        $("#sel9").val(),
+                                        $("#sel10").val()
+
+                                    ]
+
+                                }
+
+
+                            // if static HTML use window.location.assign to direct to route which uses htmlRoutes.html 
+                            // window.location.assign("/survey");
+
+                            // /ajax  call 2 options use $.ajax or $.post more direct
+                            // optipn 1 $.ajax if GET..............
+                            // $.ajax({
+                            //     url: url,
+                            //     method: 'GET',
+                            //}).done(function (result) {
+
+
+                            // Option 1 $.ajax  (when POST need body but with GET no body as per above example)
+                            // $.ajax({
+                            //         method: 'POST',
+                            //         url: "/api/friend",
+                            //         body: newFriend
+                            //     })
+                            // option 2 $.post same thing but short hand for doing an AJAX POST call
+
+                            $.post("/api/friend", newFriend)
+                                .done(function (data) {
+                                    console.log(data);
+                                    // to be removed before go live
+                                    alert("Adding friend...");
+                                });
+                        });;
+                    </script>
+
+
+</body>
+
+</html>
