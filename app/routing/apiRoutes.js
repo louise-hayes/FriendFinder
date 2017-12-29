@@ -48,11 +48,13 @@ function apifriends() {
         // We then add the json the user sent to the freinds array
         friends.push(newfriend);
         // extract newfriend scores as number array
-        var result = findmatch(newfriend);
+        // var result = findmatch(newfriend); to be added in next
 
         // We then display the JSON to the users
-        res.json(result);
 
+        res.json(newfriend);
+        // res.json(result); to be added in next
+// 
     });
 
 
@@ -68,6 +70,7 @@ function apifriends() {
 
     return app;
 };
+
 
 function findmatch(newfriend) {
     var newFriendScoreArray = [];
@@ -88,7 +91,7 @@ function findmatch(newfriend) {
         
         
 
-    }
+
     return result;
 
 };
