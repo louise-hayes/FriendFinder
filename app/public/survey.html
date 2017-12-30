@@ -144,7 +144,7 @@ on click of submit api post to friend"> -->
                                     </label>
                                     <p>You prefer a book to a movie</p>
                                     <select class="form-control" id="sel9">
-                                        <option> value="1"1 (Never)</option>
+                                        <option value="1"></option>1 (Never)</option>
                                         <option>2</option>
                                         <option>3</option>
                                         <option>4</option>
@@ -172,63 +172,125 @@ on click of submit api post to friend"> -->
 
                     </div>
 
-                    <script type="text/javascript">
-                        $("#submit-btn").on("click", function (event) {
-                            event.preventDefault();
-                            //   $("#add-btn").show();
 
-                            var newFriend =
-                                //     name: $("#name").val().trim(),
-                                //     photo: $("#photo").val().trim(),
-                                //     scores: $("#scores").val().trim()
-                                {
-                                    "name": $("#name").val().trim(),
-                                    // "photo": "https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
-                                    "photo": $("#photo").val().trim(),
-                                    "scores": [
-                                        parseInt($("#sel1").val()),
-                                        parseInt($("#sel2").val()),
-                                        $("#sel3").val(),
-                                        $("#sel4").val(),
-                                        $("#sel5").val(),
-                                        $("#sel6").val(),
-                                        $("#sel7").val(),
-                                        $("#sel8").val(),
-                                        $("#sel9").val(),
-                                        $("#sel10").val()
+                </div>
 
-                                    ]
+            </div>
 
-                                }
+        </div>
+
+<!-- modal display -->
+        <div id="userModal" class="modal fade">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Your Match </h5>
+
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                            <div id="modal-name">
+                                </div>
+                        <div id="modal-photo">
+                        </div>
+                        
+
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <script type="text/javascript">
+        $("#submit-btn").on("click", function (event) {
+            event.preventDefault();
+            //   $("#add-btn").show();
+
+            var newFriend =
+                //     name: $("#name").val().trim(),
+                //     photo: $("#photo").val().trim(),
+                //     scores: $("#scores").val().trim()
+                {
+                    "name": $("#name").val().trim(),
+                    // "photo": "https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
+                    "photo": $("#photo").val().trim(),
+                    "scores": [
+                        parseInt($("#sel1").val()),
+                        parseInt($("#sel2").val()),
+                        parseInt($("#sel3").val()),
+                        parseInt($("#sel4").val()),
+                        parseInt($("#sel5").val()),
+                        parseInt($("#sel6").val()),
+                        parseInt($("#sel7").val()),
+                        parseInt($("#sel8").val()),
+                        parseInt($("#sel9").val()),
+                        parseInt($("#sel10").val())
+
+                    ]
+
+                }
+            // console.log(newFriend);
 
 
-                            // if static HTML use window.location.assign to direct to route which uses htmlRoutes.html 
-                            // window.location.assign("/survey");
+            // if static HTML use window.location.assign to direct to route which uses htmlRoutes.html 
+            // window.location.assign("/survey");
 
-                            // /ajax  call 2 options use $.ajax or $.post more direct
-                            // optipn 1 $.ajax if GET..............
-                            // $.ajax({
-                            //     url: url,
-                            //     method: 'GET',
-                            //}).done(function (result) {
+            // /ajax  call 2 options use $.ajax or $.post more direct
+            // optipn 1 $.ajax if GET..............
+            // $.ajax({
+            //     url: url,
+            //     method: 'GET',
+            //}).done(function (result) {
 
 
-                            // Option 1 $.ajax  (when POST need body but with GET no body as per above example)
-                            // $.ajax({
-                            //         method: 'POST',
-                            //         url: "/api/friend",
-                            //         body: newFriend
-                            //     })
-                            // option 2 $.post same thing but short hand for doing an AJAX POST call
+            // Option 1 $.ajax  (when POST need body but with GET no body as per above example)
+            $.ajax({
+                    method: 'POST',
+                    url: "/api/friend",
+                    contentType: "application/json",
+                    data: JSON.stringify(newFriend)
+                })
+                .done(function (data) {
+                    console.log("data matched is " + data.name);
+                    // to be removed before go live
+                    alert("Adding ajax friend...");
+                    
+                    //display the modal
+                    dispalyMatch(data);
+                });
 
-                            $.post("/api/friend", newFriend)
-                                .done(function (data) {
-                                    console.log(data);
-                                    // to be removed before go live
-                                    alert("Adding friend...");
-                                });
-                        });;
-                    </script>
+            // option 2 $.post same thing but short hand for doing an AJAX POST call
+            // $.post("/api/friend", newFriend)
+            //     .done(function (data) {
+            //         console.log(data);
+            //         // to be removed before go live
+            //         alert("Adding friend...");
+            //     });
+        });;
+
+
+        function dispalyMatch(data) {
+            console.log("in display Match to display " + data.name);
+            // var nameDiv="";
+            // nameDiv.text("");
+            var photoDiv = $('<img src="' + data.photo + '">');
+            var nameDiv = $('<p>' + data.name + '</p>');
+            $("#modal-name").append(nameDiv);
+            $("#modal-photo").append(photoDiv);
+
+            $("#userModal").modal('show');
+           
+
+        };
+    </script>
 
 
 </body>

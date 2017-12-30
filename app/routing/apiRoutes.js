@@ -1,5 +1,6 @@
 var express = require("express");
 var friends = require("../data/friends.js");
+var utils = require("../utilities/utils.js");
 
 
 function apifriends() {
@@ -41,59 +42,43 @@ function apifriends() {
     app.post("/friend", function (req, res) {
         // req.body hosts is equal to the JSON post sent from the user
         // This works because of our body-parser middleware
+        console.log("req body section");
+        console.log(req.body);
+
         var newfriend = req.body;
+        // var newfriend = {
+        //     "name": "Test",
+        //     "photo": "https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
+        //     "scores": [
+        //         '5',
+        //         '1',
+        //         '4',
+        //         '4',
+        //         '5',
+        //         '1',
+        //         '2',
+        //         '5',
+        //         '4',
+        //         '1'
+        //     ]
+        // };
 
-        console.log(newfriend);
-
+        // console.log(newfriend + " sending this to utils find match method");
+        
+        //  newfriend  to be checked against all friends in a function findmatch, returns a matching friend object
+        var result = utils.findmatch(newfriend,friends); 
         // We then add the json the user sent to the freinds array
         friends.push(newfriend);
-        // extract newfriend scores as number array
-        // var result = findmatch(newfriend); to be added in next
+        // We then sen the JSON to the users
+        res.json(result);
 
-        // We then display the JSON to the users
-
-        res.json(newfriend);
-        // res.json(result); to be added in next
-// 
     });
 
 
-    // compatibility logic goes here
-    //
-    //convert each users results into an array of integers
-    // friends.forEach(function(element) {
-    //     console.log(element);
-    // });
-    //compare each users scores to those from other users, question by question
-    //add up the difference, to calculate the total difference no negative numbers
-    // display the result as a pop up modal name and image
+    
 
     return app;
 };
 
-
-function findmatch(newfriend) {
-    var newFriendScoreArray = [];
-
-    newfriend.forEach(element => {
-        newFriendScoreArray += parseInt(newfriend.scores);
-    });
-    console.log(newFriendScoreArray);
-
-    var scoresNumberArray = [];
-    friends.forEach(element => {
-        foreach.friends.scores(element => {
-            scoresNumberArray += parseint(friends.scores);
-        })
-        
-    });
-    console.log(scoresNumberArray);
-        
-        
-
-
-    return result;
-
-};
 
 module.exports = apifriends;
