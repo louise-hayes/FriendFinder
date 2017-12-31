@@ -1,7 +1,7 @@
 var friends = [
 {
-    "name":"Louise",
-    "photo":"https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
+    "name":"Mrs Tiger",
+    "photo":"https://static.pexels.com/photos/145939/pexels-photo-145939.jpeg",
     "scores":[
         5,
         1,
@@ -16,8 +16,8 @@ var friends = [
       ]
   },
   {
-    "name":"Phil",
-    "photo":"https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
+    "name":"Mr Dreamboat",
+    "photo":"https://ichef.bbci.co.uk/news/660/cpsprodpb/126AC/production/_87563457_231fe8a0-020e-4b60-84b7-0fca26a1623c.jpg",
     "scores":[
         4,
         1,
@@ -32,8 +32,8 @@ var friends = [
       ]
   },
   {
-    "name": "Jacob Deming",
-    "photo": "https://pbs.twimg.com/profile_images/691785039043022849/oWsy8LNR.jpg",
+    "name": "Woolly Jumper",
+    "photo": "https://www.animalaid.org.uk/wp-content/uploads/2016/08/lamb-iStock-copy-767x655.jpg",
     "scores": [
     "4",
     "2",
@@ -48,8 +48,8 @@ var friends = [
     ]
     },
     {
-    "name": "Jeremiah Scanlon",
-    "photo": "https://avatars2.githubusercontent.com/u/8504998?v=3&s=460",
+    "name": "Mr Grizzly",
+    "photo": "https://thenypost.files.wordpress.com/2017/05/shutterstock_115473676.jpg?quality=90&strip=all&strip=all",
     "scores": [
     "5",
     "2",
@@ -64,8 +64,8 @@ var friends = [
     ]
     },
     {
-    "name": "Louis T. Delia",
-    "photo": "https://pbs.twimg.com/profile_images/639214960049000449/lNCRC-ub.jpg",
+    "name": "Lion the King",
+    "photo": "http://r.ddmcdn.com/w_830/s_f/o_1/cx_98/cy_0/cw_640/ch_360/APL/uploads/2015/07/cecil-AP463227356214-1000x400.jpg",
     "scores": [
     "3",
     "3",
@@ -80,8 +80,8 @@ var friends = [
     ]
     },
     {
-    "name": "Lou Ritter",
-    "photo": "https://m.facebook.com/photo.php?fbid=10208500699025296&id=1542229019&set=a.1549418665704.77596.1542229019&source=11",
+    "name": "The Stripey Brothers",
+    "photo": "http://r.ddmcdn.com/s_f/o_1/cx_297/cy_0/cw_1201/ch_1201/w_720/APL/uploads/2014/08/wild-animal-safari-zebra-5371037.jpg",
     "scores": [
     "4",
     "3",
@@ -96,8 +96,8 @@ var friends = [
     ]
     },
     {
-    "name": "Jordan Biason",
-    "photo": "https://scontent-ord1-1.xx.fbcdn.net/v/t1.0-9/12741971_10205764267089153_4212986785721953092_n.jpg?oh=4e18265f7d380167223a97fbd7eba278&oe=57B78445",
+    "name": "Mr Prickley",
+    "photo": "https://static.pexels.com/photos/50577/hedgehog-animal-baby-cute-50577.jpeg",
     "scores": [
     "4",
     "4",

@@ -277,12 +277,20 @@ on click of submit api post to friend"> -->
         });;
 
 
+
+
+
+
+
+
+
+
         function dispalyMatch(data) {
             console.log("in display Match to display " + data.name);
-            // var nameDiv="";
-            // nameDiv.text("");
-            var photoDiv = $('<img src="' + data.photo + '">');
-            var nameDiv = $('<p>' + data.name + '</p>');
+            $("#modal-name").empty();
+            $("#modal-photo").empty();
+            var photoDiv = $('<img src="' + data.photo + '" height="460" width="460">');
+            var nameDiv = $('<h2>' + data.name + '</h2>');
             $("#modal-name").append(nameDiv);
             $("#modal-photo").append(photoDiv);
 
